@@ -18,9 +18,9 @@ echo 'is followed by another command that retrieves the process ID (PID) value'
 echo 'of the previously run process (i.e. "npm start") and writes this value to'
 echo 'the file ".pidfile".'
 set -x
-npm start &
+npm start & #the & allows it to run in the background
 sleep 1
-echo $! > .pidfile
+echo $! > .pidfile #saves the process into a .pidfile because messages cannot be sent between these two scripts
 set +x
 
 echo 'Now...'
